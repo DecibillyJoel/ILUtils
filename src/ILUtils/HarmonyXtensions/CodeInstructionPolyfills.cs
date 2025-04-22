@@ -13,7 +13,7 @@ using System.Reflection;
 using OpCode = System.Reflection.Emit.OpCode;
 using OpCodes = System.Reflection.Emit.OpCodes;
 
-namespace ILUtils.libs.HarmonyXtensions;
+namespace ILUtils.HarmonyXtensions;
 
 public static class CodeInstructionPolyfills
 {

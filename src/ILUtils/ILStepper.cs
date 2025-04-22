@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.Linq;
 
-using ILUtils.libs.HarmonyXtensions;
+using ILUtils.HarmonyXtensions;
 
 using OpCode = System.Reflection.Emit.OpCode;
 using OpCodes = System.Reflection.Emit.OpCodes;
