@@ -8,7 +8,7 @@ using OpCode = System.Reflection.Emit.OpCode;
 using OpCodes = System.Reflection.Emit.OpCodes;
 using StackBehaviour = System.Reflection.Emit.StackBehaviour;
 
-namespace ILStepper;
+namespace ILUtils;
 public static class ILPatterns
 {
     #region Stack Size Patterns

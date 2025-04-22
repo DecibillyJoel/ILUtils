@@ -13,7 +13,7 @@ using System.Reflection;
 using OpCode = System.Reflection.Emit.OpCode;
 using OpCodes = System.Reflection.Emit.OpCodes;
 
-namespace ILStepper.libs.HarmonyXtensions;
+namespace ILUtils.libs.HarmonyXtensions;
 
 public static class CodeInstructionPolyfills
 {

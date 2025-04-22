@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <AssemblyName>com.github.decibillyjoel.ILStepper</AssemblyName>
+    <AssemblyName>com.github.decibillyjoel.ILUtils</AssemblyName>
     <Authors>DBJ</Authors>
     <Description>BepInEx Transpiler Tools</Description>
-    <Product>ILStepper</Product>
+    <Product>ILUtils</Product>
     <!--
       Except this, you should keep this up to date with your publishing tags.
     -->
@@ -20,8 +20,8 @@
     <!-- 
       You shouldn't have to change these, but you could if you wanted to.
     -->
-    <RootNamespace>ILStepper</RootNamespace>
-    <TargetName>ILStepper</TargetName>
+    <RootNamespace>ILUtils</RootNamespace>
+    <TargetName>ILUtils</TargetName>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference

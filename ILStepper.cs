@@ -5,12 +5,12 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.Linq;
 
-using ILStepper.libs.HarmonyXtensions;
+using ILUtils.libs.HarmonyXtensions;
 
 using OpCode = System.Reflection.Emit.OpCode;
 using OpCodes = System.Reflection.Emit.OpCodes;
 
-namespace ILStepper
+namespace ILUtils
 {
     public class ILStepper
     {
