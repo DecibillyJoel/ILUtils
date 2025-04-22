@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/DecibillyJoel/ILStepper</RepositoryUrl>
+    <RepositoryUrl>https://github.com/DecibillyJoel/ILUtils</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup>
