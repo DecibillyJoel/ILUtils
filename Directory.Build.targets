@@ -8,7 +8,7 @@
     />
   </ItemGroup>
 
-  <Target Name="AddGeneratedFile" BeforeTargets="AfterClean;BeforeBuild;BeforeRebuild;BeforeCompile;CoreCompile;BeforeResGen;BeforeResolveReference"
+  <Target Name="AddGeneratedFile" BeforeTargets="AfterClean;BeforeBuild;BeforeCompile;CoreCompile;BeforeResolveReference"
       Inputs="$(MSBuildAllProjects)" Outputs="$(IntermediateOutputPath)BepPluginInfo.cs">
 
     <PropertyGroup>
