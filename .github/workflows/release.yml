@@ -1,4 +1,4 @@
-name: Generate Release
+name: Generate Release & Publish to TS
 
 on:
   push:
@@ -26,7 +26,7 @@ jobs:
           dotnet restore --locked-mode
           dotnet tool restore
           dotnet build
-
+      
       - name: Release
         uses: softprops/action-gh-release@v2
 
@@ -34,5 +34,12 @@ jobs:
           generate_release_notes: true
           make_latest: "true"
           files: |
-            bin/Debug/ILUtils.dll
+            src/ILUtils/bin/Debug/ILUtils.dll
             LICENSE.md
+
+      - name: Publish to TS
+        env:
+          TCLI_AUTH_TOKEN: ${{ secrets.TCLI_AUTH_TOKEN }}
+          PACKAGE_VERSION: ${{ github.ref_name }}
+        run: |
+          dotnet publish -c Release
