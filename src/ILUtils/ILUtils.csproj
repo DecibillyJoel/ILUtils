@@ -33,16 +33,16 @@
   </PropertyGroup>
 
   <!--
-      When adding additional references, ensure you use <Private>false</Private> to
-      ensure the DLL is explicitly NOT copied to the output directory. This is because
-      the DLLs are already included in the game and will be loaded from there.
+    When adding additional references, ensure you use <Private>false</Private> to
+    ensure the DLL is explicitly NOT copied to the output directory. This is because
+    the DLLs are already included in the game and will be loaded from there.
 
-      Further, if the DLL is not included as part of the game, you should be using a
-      Dependency in your thunderstore.toml file to ensure the DLL is available to the
-      game when your mod is loaded.
+    Further, if the DLL is not included as part of the game, you should be using a
+    Dependency in your thunderstore.toml file to ensure the DLL is available to the
+    game when your mod is loaded.
 
-      Example: <Reference Include="Assembly-CSharp.dll" Private="false" />
-    -->
+    Example: <Reference Include="Assembly-CSharp.dll" Private="false" />
+  -->
 
   <!--
     Don't mess with anything below this line, it is required to build via 
