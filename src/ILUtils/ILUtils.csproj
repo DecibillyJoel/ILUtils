@@ -44,15 +44,6 @@
     Example: <Reference Include="Assembly-CSharp.dll" Private="false" />
   -->
 
-  <!--
-    Don't mess with anything below this line, it is required to build via 
-    github actions. If you are referencing other DLLs in your project than the
-    base game or unity DLLs they will need to be available via NUGET or copied
-    directly into your repo (which is pretty bad form) to build properly unless
-    they already exist on github in which case you can use submodules to track
-    the reference instead.
-  -->
-
   <ItemGroup>
     <PackageReference 
       Include="BepInEx.AssemblyPublicizer.MSBuild" 
@@ -67,10 +58,6 @@
     <PackageReference
       Include="BepInEx.Core"
       Version="5.4.*"
-    />
-    <PackageReference
-      Include="LethalCompany.GameLibs.Steam"
-      Version="62.0.0-ngd.0"
     />
   </ItemGroup>
 </Project>
