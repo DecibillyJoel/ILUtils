@@ -1,5 +1,8 @@
 # CHANGELOG  
   
+## v1.0.4
+- Added dependency to HarmonyXTranspilerFix  
+  
 ## v1.0.3  
 - Made public consts for plugin info  
   
