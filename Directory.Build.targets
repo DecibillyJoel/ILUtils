@@ -37,5 +37,12 @@ internal static class BepPluginInfo
         WriteOnlyWhenDifferent="true" Overwrite="true" />
 
   </Target>
+
+  <Target Name="CleanThunderstoreArtifacts" AfterTargets="Clean;">
+    <RemoveDir Directories="$(SolutionDir)\artifacts\tspublish\build" />
+    <MakeDir Directories="$(SolutionDir)\artifacts\tspublish\build" />
+    <RemoveDir Directories="$(SolutionDir)\artifacts\tspublish\dist" />
+    <MakeDir Directories="$(SolutionDir)\artifacts\tspublish\dist" />
+  </Target>
   
 </Project>
