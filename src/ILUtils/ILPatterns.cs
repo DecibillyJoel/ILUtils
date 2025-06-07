@@ -9,6 +9,7 @@ using OpCodes = System.Reflection.Emit.OpCodes;
 using StackBehaviour = System.Reflection.Emit.StackBehaviour;
 
 namespace ILUtils;
+
 public static class ILPatterns
 {
     #region Stack Size Patterns
@@ -45,7 +46,7 @@ public static class ILPatterns
                 StackBehaviour.Popref_popi_pop1 => -3,
 
                 StackBehaviour.Varpop or StackBehaviour.Varpush => null,
-                _ => throw new ArgumentOutOfRangeException($"stackBehaviour {stackBehaviour} is an invalid value")
+                _ => throw new ArgumentOutOfRangeException($"[{nameof(ILUtils)}.{nameof(ILPatterns)}.{nameof(StackSizeDelta)}] [{stackBehaviour}] is an invalid value")
             };
         }
 
@@ -105,7 +106,7 @@ public static class ILPatterns
                 if (EmptiesStack(code)) return true;
 
                 int delta = StackSizeDelta(code)
-                    ?? throw new ArgumentException($"[ILStepper.ILPatterns.NextEmptyStack] Encountered uncountable instruction [{index}] {code}");
+                    ?? throw new ArgumentException($"[{nameof(ILUtils)}.{nameof(ILPatterns)}.{nameof(NextEmptyStack)}] Encountered uncountable instruction [{index}] {code}");
 
                 return (stackSize += delta) == 0;
             };

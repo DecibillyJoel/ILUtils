@@ -70,13 +70,13 @@ namespace ILUtils
         public LocalVariableInfo GetLocal(int localIndex, string errorMessage = "No such local variable!")
         {
             return TryGetLocal(localIndex)
-                ?? throw new Exception($"[ILStepper.ILStepper.GetLocal] [{localIndex}] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(GetLocal)}] [{localIndex}] | {errorMessage}");
         }
 
         public LocalVariableInfo GetLocal(CodeInstruction codeWithLocal, string errorMessage = "No such local variable!")
         {
             return TryGetLocal(codeWithLocal)
-                ?? throw new Exception($"[ILStepper.ILStepper.GetLocal] [{codeWithLocal}] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(GetLocal)}] [{codeWithLocal}] | {errorMessage}");
         }
 
         public LocalVariableInfo? TrySetLocal(CodeInstruction code, LocalVariableInfo local)
@@ -120,19 +120,19 @@ namespace ILUtils
         public LocalVariableInfo SetLocal(CodeInstruction code, LocalVariableInfo local, string errorMessage = "Could not set local!")
         {
             return TrySetLocal(code, local)
-                ?? throw new Exception($"[ILStepper.ILStepper.SetLocal] [{code}, {local}] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(SetLocal)}] [{code}, {local}] | {errorMessage}");
         }
 
         public LocalVariableInfo SetLocal(CodeInstruction code, int localIndex, string errorMessage = "Could not set local!")
         {
             return TrySetLocal(code, localIndex)
-                ?? throw new Exception($"[ILStepper.ILStepperSetLocal] [{code}, {localIndex}] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(SetLocal)}] [{code}, {localIndex}] | {errorMessage}");
         }
 
         public LocalVariableInfo SetLocal(CodeInstruction code, CodeInstruction codeWithLocal, string errorMessage = "Could not set local!")
         {
             return TrySetLocal(code, codeWithLocal)
-                ?? throw new Exception($"[ILStepper.ILStepperSetLocal] [{code}, {codeWithLocal}] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(SetLocal)}] [{code}, {codeWithLocal}] | {errorMessage}");
         }
 
         public int? TryFindIL(Func<CodeInstruction, int, bool> searchCondition, int? index = null, int offset = 0, bool reverse = false)
@@ -154,14 +154,14 @@ namespace ILUtils
         {
             index ??= CurrentIndex;
             return TryFindIL(searchCondition: searchCondition, index: index, offset: offset, reverse: reverse)
-                ?? throw new Exception($"[ILStepper.ILStepperFindIL] [{searchCondition}, {index}, {reverse} ({(reverse ? "reverse" : "forward")})] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(FindIL)}] [{searchCondition}, {index}, {reverse} ({(reverse ? "reverse" : "forward")})] | {errorMessage}");
         }
 
         public int FindIL(Func<CodeInstruction, bool> searchCondition, int? index = null, int offset = 0, bool reverse = false, string errorMessage = "Not found!")
         {
             index ??= CurrentIndex;
             return TryFindIL(searchCondition: searchCondition, index: index, offset: offset, reverse: reverse)
-                ?? throw new Exception($"[ILStepper.ILStepperFindIL] [{searchCondition}, {index}, {reverse} ({(reverse ? "reverse" : "forward")})] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(FindIL)}] [{searchCondition}, {index}, {reverse} ({(reverse ? "reverse" : "forward")})] | {errorMessage}");
         }
 
         public int? TryGotoIL(Func<CodeInstruction, bool> searchCondition, int? index = null, int offset = 0, bool reverse = false)
@@ -184,14 +184,14 @@ namespace ILUtils
         {
             index ??= CurrentIndex;
             return CurrentIndex = TryFindIL(searchCondition: searchCondition, index: index, offset: offset, reverse: reverse)
-                ?? throw new Exception($"[ILStepper.ILStepper.GotoIL] [{searchCondition}, {index}, {reverse} ({(reverse ? "reverse" : "forward")})] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(GotoIL)}] [{searchCondition}, {index}, {reverse} ({(reverse ? "reverse" : "forward")})] | {errorMessage}");
         }
 
         public int GotoIL(Func<CodeInstruction, int, bool> searchCondition, int? index = null, int offset = 0, bool reverse = false, string errorMessage = "Not found!")
         {
             index ??= CurrentIndex;
             return CurrentIndex = TryFindIL(searchCondition: searchCondition, index: index, offset: offset, reverse: reverse)
-                ?? throw new Exception($"[ILStepper.ILStepper.GotoIL] [{searchCondition}, {index}, {reverse} ({(reverse ? "reverse" : "forward")})] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(GotoIL)}] [{searchCondition}, {index}, {reverse} ({(reverse ? "reverse" : "forward")})] | {errorMessage}");
         }
 
         public int? TryFindIndex(int? index = null, int offset = 0, int leftBoundOffset = 0, int rightBoundOffset = 1)
@@ -207,7 +207,7 @@ namespace ILUtils
         {
             index ??= CurrentIndex;
             return TryFindIndex(index: index, offset: offset, leftBoundOffset: leftBoundOffset, rightBoundOffset: rightBoundOffset)
-                ?? throw new Exception($"[ILStepper.ILStepper.FindIndex] [{index + offset} ({index} + {offset}), {leftBoundOffset} (0 + {leftBoundOffset}), {(Instructions.Count - 1) + rightBoundOffset} ({Instructions.Count - 1} + {rightBoundOffset})] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(FindIndex)}] [{index + offset} ({index} + {offset}), {leftBoundOffset} (0 + {leftBoundOffset}), {(Instructions.Count - 1) + rightBoundOffset} ({Instructions.Count - 1} + {rightBoundOffset})] | {errorMessage}");
         }
 
         public int? TryGotoIndex(int? index = null, int offset = 0, int leftBoundOffset = 0, int rightBoundOffset = 1)
@@ -222,7 +222,7 @@ namespace ILUtils
         {
             index ??= CurrentIndex;
             return CurrentIndex = TryFindIndex(index: index, offset: offset, leftBoundOffset: leftBoundOffset, rightBoundOffset: rightBoundOffset)
-                ?? throw new Exception($"[ILStepper.ILStepper.GotoIndex] [{index + offset} ({index} + {offset}), {leftBoundOffset} (0 + {leftBoundOffset}), {(Instructions.Count - 1) + rightBoundOffset} ({Instructions.Count - 1} + {rightBoundOffset})] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(GotoIndex)}] [{index + offset} ({index} + {offset}), {leftBoundOffset} (0 + {leftBoundOffset}), {(Instructions.Count - 1) + rightBoundOffset} ({Instructions.Count - 1} + {rightBoundOffset})] | {errorMessage}");
         }
 
         public List<CodeInstruction>? TryInsertIL(List<CodeInstruction> codeRange, int? index = null, bool shiftCurrentIndex = true, bool pinLabels = true, bool pinBlocks = true)
@@ -257,14 +257,14 @@ namespace ILUtils
         {
             index ??= CurrentIndex;
             return TryInsertIL(codeRange: codeRange, index: index, shiftCurrentIndex: shiftCurrentIndex, pinLabels: pinLabels, pinBlocks: pinBlocks)
-                ?? throw new Exception($"[ILStepper.ILStepper.InsertIL] [{codeRange}, {index}, {shiftCurrentIndex} ({(shiftCurrentIndex ? "shift current index" : "dont shift current index")})] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(InsertIL)}] [{codeRange}, {index}, {shiftCurrentIndex} ({(shiftCurrentIndex ? "shift current index" : "dont shift current index")})] | {errorMessage}");
         }
 
         public List<CodeInstruction> InsertIL(CodeInstruction? code, int? index = null, bool shiftCurrentIndex = true, bool pinLabels = true, bool pinBlocks = true, string errorMessage = "Out of bounds!")
         {
             index ??= CurrentIndex;
             return TryInsertIL(codeRange: code != null ? [code] : [], index: index, shiftCurrentIndex: shiftCurrentIndex, pinLabels: pinLabels, pinBlocks: pinBlocks)
-                ?? throw new Exception($"[ILStepper.ILStepper.InsertIL] [{code}, {index}, {shiftCurrentIndex} ({(shiftCurrentIndex ? "shift current index" : "dont shift current index")})] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(InsertIL)}] [{code}, {index}, {shiftCurrentIndex} ({(shiftCurrentIndex ? "shift current index" : "dont shift current index")})] | {errorMessage}");
         }
 
         public List<CodeInstruction>? TryRemoveIL(int? startIndex = null, int? endIndex = null, bool shiftCurrentIndex = true, bool pinLabels = true, bool pinBlocks = true)
@@ -301,7 +301,7 @@ namespace ILUtils
             startIndex ??= CurrentIndex;
             endIndex ??= CurrentIndex;
             return TryRemoveIL(startIndex: startIndex, endIndex: endIndex, shiftCurrentIndex: shiftCurrentIndex, pinLabels: pinLabels, pinBlocks: pinBlocks)
-                ?? throw new Exception($"[ILStepper.ILStepper.RemoveIL] [{startIndex}, {endIndex}, {shiftCurrentIndex} ({(shiftCurrentIndex ? "shift current index" : "dont shift current index")})] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(RemoveIL)}] [{startIndex}, {endIndex}, {shiftCurrentIndex} ({(shiftCurrentIndex ? "shift current index" : "dont shift current index")})] | {errorMessage}");
         }
 
         public List<CodeInstruction>? TryGetIL(int? startIndex = null, int? endIndex = null)
@@ -324,7 +324,7 @@ namespace ILUtils
             startIndex ??= CurrentIndex;
             endIndex ??= CurrentIndex;
             return TryGetIL(startIndex: startIndex, endIndex: endIndex)
-                ?? throw new Exception($"[ILStepper.ILStepper.GetIL] [{startIndex}, {endIndex}] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(GetIL)}] [{startIndex}, {endIndex}] | {errorMessage}");
         }
 
         public List<Label>? TryMoveAllLabels(List<CodeInstruction> sourceCodeRange, List<CodeInstruction> destinationCodeRange)
@@ -346,13 +346,13 @@ namespace ILUtils
         public List<Label> MoveAllLabels(List<CodeInstruction> sourceCodeRange, List<CodeInstruction> destinationCodeRange, string errorMessage = "Source and destination instruction count don't match!")
         {
             return TryMoveAllLabels(sourceCodeRange, destinationCodeRange)
-                ?? throw new Exception($"[ILStepper.ILStepper.MoveAllLabels] [{sourceCodeRange}, {destinationCodeRange}] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(MoveAllLabels)}] [{sourceCodeRange}, {destinationCodeRange}] | {errorMessage}");
         }
 
         public List<Label> MoveAllLabels(List<CodeInstruction> sourceCodeRange, CodeInstruction destinationCode, string errorMessage = "Source and destination instruction count don't match!")
         {
             return TryMoveAllLabels(sourceCodeRange, Enumerable.Repeat(destinationCode, sourceCodeRange.Count).ToList())
-                ?? throw new Exception($"[ILStepper.ILStepper.MoveAllLabels] [{sourceCodeRange}, {{{destinationCode}, ...}}] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(MoveAllLabels)}] [{sourceCodeRange}, {{{destinationCode}, ...}}] | {errorMessage}");
         }
 
         public List<Label>? TryShiftAllLabels(int? startIndex = null, int? endIndex = null, int shiftBy = 1)
@@ -375,7 +375,7 @@ namespace ILUtils
             startIndex ??= CurrentIndex;
             endIndex ??= CurrentIndex;
             return TryShiftAllLabels(startIndex, endIndex)
-                ?? throw new Exception($"[ILStepper.ILStepper.ShiftAllLabels] [{startIndex}, {endIndex}, {startIndex + shiftBy} ({startIndex} + {shiftBy}), {endIndex + shiftBy} ({endIndex} + {shiftBy})] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(ShiftAllLabels)}] [{startIndex}, {endIndex}, {startIndex + shiftBy} ({startIndex} + {shiftBy}), {endIndex + shiftBy} ({endIndex} + {shiftBy})] | {errorMessage}");
         }
 
         public List<ExceptionBlock>? TryMoveAllBlocks(List<CodeInstruction> sourceCodeRange, List<CodeInstruction> destinationCodeRange)
@@ -397,13 +397,13 @@ namespace ILUtils
         public List<ExceptionBlock> MoveAllBlocks(List<CodeInstruction> sourceCodeRange, List<CodeInstruction> destinationCodeRange, string errorMessage = "Source and destination instruction count don't match!")
         {
             return TryMoveAllBlocks(sourceCodeRange, destinationCodeRange)
-                ?? throw new Exception($"[ILStepper.ILStepper.MoveAllBlocks] [{sourceCodeRange}, {destinationCodeRange}] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(MoveAllBlocks)}] [{sourceCodeRange}, {destinationCodeRange}] | {errorMessage}");
         }
 
         public List<ExceptionBlock> MoveAllBlocks(List<CodeInstruction> sourceCodeRange, CodeInstruction destinationCode, string errorMessage = "Source and destination instruction count don't match!")
         {
             return TryMoveAllBlocks(sourceCodeRange, Enumerable.Repeat(destinationCode, sourceCodeRange.Count).ToList())
-                ?? throw new Exception($"[ILStepper.ILStepper.MoveAllBlocks] [{sourceCodeRange}, {{{destinationCode}, ...}}] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(MoveAllBlocks)}] [{sourceCodeRange}, {{{destinationCode}, ...}}] | {errorMessage}");
         }
 
         public List<ExceptionBlock>? TryShiftAllBlocks(int? startIndex = null, int? endIndex = null, int shiftBy = 1)
@@ -426,7 +426,7 @@ namespace ILUtils
             startIndex ??= CurrentIndex;
             endIndex ??= CurrentIndex;
             return TryShiftAllBlocks(startIndex, endIndex)
-                ?? throw new Exception($"[ILStepper.ILStepper.ShiftAllBlocks] [{startIndex}, {endIndex}, {startIndex + shiftBy} ({startIndex} + {shiftBy}), {endIndex + shiftBy} ({endIndex} + {shiftBy})] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(ShiftAllBlocks)}] [{startIndex}, {endIndex}, {startIndex + shiftBy} ({startIndex} + {shiftBy}), {endIndex + shiftBy} ({endIndex} + {shiftBy})] | {errorMessage}");
         }
 
         public List<Label> ExtractAllLabels(List<CodeInstruction> codeRange)
@@ -446,7 +446,7 @@ namespace ILUtils
         {
             startIndex ??= CurrentIndex;
             return TryExtractAllLabels(startIndex, endIndex)
-                ?? throw new Exception($"[ILStepper.ILStepper.ExtractAllLabels] [{startIndex}, {endIndex}] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(ExtractAllLabels)}] [{startIndex}, {endIndex}] | {errorMessage}");
         }
 
         public List<Label> ExtractAllBlocks(List<CodeInstruction> codeRange)
@@ -467,7 +467,7 @@ namespace ILUtils
             startIndex ??= CurrentIndex;
             endIndex ??= CurrentIndex;
             return TryExtractAllBlocks(startIndex, endIndex)
-                ?? throw new Exception($"[ILStepper.ILStepper.ExtractAllBlocks] [{startIndex}, {endIndex}] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(ExtractAllBlocks)}] [{startIndex}, {endIndex}] | {errorMessage}");
         }
 
         public List<CodeInstruction>? TryShiftIL(int? startIndex = null, int? endIndex = null, int shiftBy = 1, bool shiftCurrentIndex = true)
@@ -493,7 +493,7 @@ namespace ILUtils
             }
 
             // This error message should never be thrown
-            string impossibleErrorMessage = $"[ILStepper.ILStepper.TryShiftIL] [{startIndex}, {endIndex}, {startIndex + shiftBy} ({startIndex} + {shiftBy}), {endIndex + shiftBy} ({endIndex} + {shiftBy})] Somehow calculated invalid parameters. This should never happen!";
+            string impossibleErrorMessage = $"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(TryShiftIL)}] [{startIndex}, {endIndex}, {startIndex + shiftBy} ({startIndex} + {shiftBy}), {endIndex + shiftBy} ({endIndex} + {shiftBy})] Somehow calculated invalid parameters. This should never happen!";
 
             List<CodeInstruction> shiftedIL = RemoveIL(startIndex: startIndex, endIndex: endIndex, shiftCurrentIndex: shiftCurrentIndex, pinLabels: false, pinBlocks: false, errorMessage: impossibleErrorMessage);
             return InsertIL(shiftedIL, index: destinationStartIndex, shiftCurrentIndex: shiftCurrentIndex, pinLabels: false, pinBlocks: false, errorMessage: impossibleErrorMessage);
@@ -504,7 +504,7 @@ namespace ILUtils
             startIndex ??= CurrentIndex;
             endIndex ??= CurrentIndex;
             return TryShiftIL(startIndex, endIndex, shiftBy, shiftCurrentIndex)
-                ?? throw new Exception($"[ILStepper.ILStepper.ShiftIL] [{startIndex}, {endIndex}, {startIndex + shiftBy} ({startIndex} + {shiftBy}), {endIndex + shiftBy} ({endIndex} + {shiftBy})] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(ShiftIL)}] [{startIndex}, {endIndex}, {startIndex + shiftBy} ({startIndex} + {shiftBy}), {endIndex + shiftBy} ({endIndex} + {shiftBy})] | {errorMessage}");
         }
 
         public List<CodeInstruction>? TryOverwriteIL(List<CodeInstruction> codeRange, int? index = null, bool pinLabels = true, bool pinBlocks = true)
@@ -534,14 +534,14 @@ namespace ILUtils
         {
             index ??= CurrentIndex;
             return TryOverwriteIL(codeRange: codeRange, index: index, pinLabels: pinLabels, pinBlocks: pinBlocks)
-                ?? throw new Exception($"[ILStepper.ILStepper.OverwriteIL] [{codeRange}, {index}, {index + codeRange.Count()} ({index} + {codeRange.Count()})] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(OverwriteIL)}] [{codeRange}, {index}, {index + codeRange.Count()} ({index} + {codeRange.Count()})] | {errorMessage}");
         }
 
         public List<CodeInstruction> OverwriteIL(CodeInstruction? code, int? index = null, bool pinLabels = true, bool pinBlocks = true, string errorMessage = "Out of bounds!")
         {
             index ??= CurrentIndex;
             return TryOverwriteIL(codeRange: code != null ? [code] : [], index: index, pinLabels: pinLabels, pinBlocks: pinBlocks)
-                ?? throw new Exception($"[ILStepper.ILStepper.OverwriteIL] [{code}, {index}, {index + (code != null ? 1 : 0)} ({index} + {(code != null ? 1 : 0)})] | {errorMessage}");
+                ?? throw new Exception($"[{nameof(ILUtils)}.{nameof(ILStepper)}.{nameof(OverwriteIL)}] [{code}, {index}, {index + (code != null ? 1 : 0)} ({index} + {(code != null ? 1 : 0)})] | {errorMessage}");
         }
     }
 }

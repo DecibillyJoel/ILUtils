@@ -1,8 +1,8 @@
-# <https://github.com/BepInEx/HarmonyX/blob/master/LICENSE> #
+# <https://github.com/BepInEx/HarmonyX/blob/master/LICENSE.Harmony>  
 
 MIT License
 
-Copyright (c) 2020 BepInEx
+Copyright (c) 2017 Andreas Pardeike
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
