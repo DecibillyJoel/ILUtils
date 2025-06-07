@@ -102,7 +102,7 @@ public static class ILPatterns
         {
             int stackSize = startSize;
 
-            return (CodeInstruction code, int index) => {
+            return (code, index) => {
                 if (EmptiesStack(code)) return true;
 
                 int delta = StackSizeDelta(code)
