@@ -1,7 +1,7 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
 
-namespace ILUtils2.Plugin;
+namespace ILUtils;
 
 /*
   Here are some basic resources on code style and naming conventions to help
