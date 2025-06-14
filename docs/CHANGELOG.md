@@ -1,5 +1,9 @@
 # CHANGELOG  
   
+## v1.0.6  
+  
+- Pulled improved template changes, including: reverted Plugin class being moved from root namespace to root.Plugin namespace  
+  
 ## v1.0.5  
   
 - Refactored project to use improved TS Publishing Template  
